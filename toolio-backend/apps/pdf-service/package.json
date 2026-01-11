@@ -1,0 +1,10 @@
+{
+  "name": "pdf-service",
+  "version": "1.0.0",
+  "dependencies": {
+    "@toolio/core": "workspace:*"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}

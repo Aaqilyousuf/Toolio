@@ -1,0 +1,11 @@
+{
+  "name": "toolio-backend",
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}
