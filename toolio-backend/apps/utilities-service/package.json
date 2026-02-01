@@ -1,17 +1,14 @@
 {
-  "name": "pdf-service",
+  "name": "utilities-service",
   "version": "1.0.0",
   "scripts": {
     "start": "bun run src/index.ts",
     "dev": "bun run src/index.ts"
   },
   "dependencies": {
-    "@toolio/core": "workspace:*",
-    "jszip": "^3.10.1",
-    "pdf-lib": "^1.17.1"
+    "@toolio/core": "workspace:*"
   },
   "devDependencies": {
-    "@types/jszip": "^3.4.1",
     "bun-types": "latest"
   }
 }

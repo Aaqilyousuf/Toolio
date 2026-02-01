@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Image, Video, Music, FileText } from "lucide-react";
+import { Image, Video, Music, FileText, Settings } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { CategoryCard } from "@/components/CategoryCard";
 import { GitHubButton } from "@/components/GitHubButton";
@@ -31,7 +31,14 @@ const categories = [
     description: "Merge, split, and manage PDF documents",
     icon: FileText,
     href: "/pdf",
-    toolCount: 1,
+    toolCount: 7,
+  },
+  {
+    title: "Utilities",
+    description: "Everyday web and system utility tools",
+    icon: Settings,
+    href: "/utils",
+    toolCount: 3,
   },
 ];
 
@@ -64,7 +71,7 @@ const Index = () => {
             Toolio
           </h1>
           <p className="text-lg text-muted-foreground font-body">
-            Privacy-first tools to solve everyday file problems.
+            Privacy-first tools to solve everyday file and utility problems.
           </p>
           
           <div className="mt-8 flex justify-center">
@@ -78,7 +85,7 @@ const Index = () => {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5"
         >
           {categories.map((category) => (
             <motion.div key={category.title} variants={item}>

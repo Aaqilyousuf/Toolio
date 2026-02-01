@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Reorder } from "framer-motion";
 import { ArrowLeft, GripVertical, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
@@ -128,18 +128,21 @@ export default function PDFMerge() {
                   <p className="text-sm text-muted-foreground">
                     {files.length} file{files.length !== 1 ? "s" : ""} selected. Drag to reorder.
                   </p>
-                  <ul className="space-y-2">
+                  <Reorder.Group
+                    axis="y"
+                    values={files}
+                    onReorder={setFiles}
+                    className="space-y-2"
+                  >
                     {files.map((file, index) => (
-                      <li
+                      <Reorder.Item
                         key={`${file.name}-${index}`}
-                        className="flex items-center gap-3 rounded-lg border border-border bg-card p-3"
+                        value={file}
+                        className="flex items-center gap-3 rounded-lg border border-border bg-card p-3 shadow-sm"
                       >
-                        <button
-                          type="button"
-                          className="cursor-grab text-muted-foreground hover:text-foreground"
-                        >
+                        <div className="cursor-grab text-muted-foreground hover:text-foreground active:cursor-grabbing">
                           <GripVertical className="h-4 w-4" />
-                        </button>
+                        </div>
                         <span className="text-sm text-muted-foreground">
                           {index + 1}.
                         </span>
@@ -169,9 +172,9 @@ export default function PDFMerge() {
                             <X className="h-4 w-4" />
                           </button>
                         </div>
-                      </li>
+                      </Reorder.Item>
                     ))}
-                  </ul>
+                  </Reorder.Group>
                 </div>
               )}
 

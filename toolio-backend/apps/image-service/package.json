@@ -2,7 +2,8 @@
   "name": "image-service",
   "version": "1.0.0",
   "scripts": {
-    "start": "bun run src/index.ts"
+    "start": "bun run src/index.ts",
+    "dev": "bun run src/index.ts"
   },
   "dependencies": {
     "@toolio/core": "workspace:*"
