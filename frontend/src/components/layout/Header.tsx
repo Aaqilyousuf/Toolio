@@ -21,6 +21,9 @@ export function Header() {
           <Link to="/pdf" className="text-muted-foreground transition-colors hover:text-foreground">
             PDF
           </Link>
+          <Link to="/about" className="text-muted-foreground transition-colors hover:text-foreground">
+            About
+          </Link>
           <ThemeToggle />
         </nav>
       </div>

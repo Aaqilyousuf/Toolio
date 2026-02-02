@@ -15,20 +15,24 @@ export function CategoryCard({ title, description, icon: Icon, href, toolCount }
   return (
     <Link to={href} className="block h-full">
       <motion.div
-        whileHover={{ y: -3, scale: 1.01 }}
-        transition={{ duration: 0.2, ease: "easeOut" }}
+        whileHover={{ y: -2 }}
+        transition={{ duration: 0.2 }}
         className="h-full"
       >
-        <Card className="group h-full cursor-pointer border-2 border-border bg-card shadow-sm transition-all hover:border-primary/50 hover:shadow-lg">
-          <CardContent className="flex flex-col items-center p-8 text-center">
-            <div className="mb-4 rounded-md bg-primary/10 p-4 transition-colors group-hover:bg-primary/20">
-              <Icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
+        <Card className="group h-full cursor-pointer border border-border/50 bg-card/50 shadow-none transition-all hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_0_20px_rgba(45,212,191,0.05)] rounded-2xl">
+          <CardContent className="flex flex-col items-start p-7">
+            <div className="mb-4 rounded-xl bg-primary/5 p-3.5 transition-colors group-hover:bg-primary/10">
+              <Icon className="h-7 w-7 text-primary" strokeWidth={2} />
             </div>
-            <h3 className="mb-2 font-heading text-xl uppercase tracking-wider">{title}</h3>
-            <p className="mb-3 text-sm text-muted-foreground font-body">{description}</p>
-            <span className="rounded-sm bg-secondary px-2 py-1 text-xs font-medium text-secondary-foreground">
-              {toolCount} {toolCount === 1 ? "tool" : "tools"}
-            </span>
+            <div className="flex flex-col flex-1 gap-2">
+              <h3 className="font-heading text-lg font-medium uppercase tracking-wider text-foreground/90">{title}</h3>
+              <p className="text-sm text-muted-foreground/70 font-body line-clamp-2 leading-snug">{description}</p>
+            </div>
+            <div className="mt-5">
+              <span className="rounded-full bg-primary/5 px-3 py-1 text-[10px] font-bold uppercase tracking-tighter text-primary/80 border border-primary/10">
+                {toolCount} {toolCount === 1 ? "tool" : "tools"}
+              </span>
+            </div>
           </CardContent>
         </Card>
       </motion.div>

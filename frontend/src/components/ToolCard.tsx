@@ -14,19 +14,21 @@ export function ToolCard({ title, description, icon: Icon, href }: ToolCardProps
   return (
     <Link to={href}>
       <motion.div
-        whileHover={{ y: -2, scale: 1.01 }}
-        transition={{ duration: 0.2, ease: "easeOut" }}
+        whileHover={{ y: -2 }}
+        transition={{ duration: 0.2 }}
       >
-        <Card className="group h-full cursor-pointer border-2 border-border bg-card shadow-sm transition-all hover:border-primary/50 hover:shadow-lg">
-          <CardContent className="flex items-start gap-4 p-6">
-            <div className="rounded-md bg-primary/10 p-3 transition-colors group-hover:bg-primary/20">
-              <Icon className="h-5 w-5 text-primary" strokeWidth={1.5} />
+        <Card className="group h-full cursor-pointer border border-border/50 bg-card/50 shadow-none transition-all hover:border-primary/60 hover:bg-card/80 hover:shadow-[0_0_20px_rgba(45,212,191,0.05)] rounded-2xl">
+          <CardContent className="flex flex-col items-start p-7">
+            <div className="mb-4 rounded-xl bg-primary/5 p-3.5 transition-colors group-hover:bg-primary/10">
+              <Icon className="h-7 w-7 text-primary" strokeWidth={2} />
             </div>
-            <div className="flex-1">
-              <h3 className="mb-1 font-heading text-lg uppercase tracking-wider">{title}</h3>
-              <p className="text-sm text-muted-foreground font-body">{description}</p>
+            <div className="flex flex-col flex-1 gap-2">
+              <h3 className="font-heading text-lg font-medium uppercase tracking-wider text-foreground/90">{title}</h3>
+              <p className="text-sm text-muted-foreground/70 font-body line-clamp-2 leading-snug">{description}</p>
             </div>
-            <ArrowRight className="mt-1 h-4 w-4 text-primary opacity-0 transition-opacity group-hover:opacity-100" />
+            <div className="mt-5 flex items-center text-[11px] font-bold uppercase tracking-widest text-primary/70 opacity-0 transition-opacity group-hover:opacity-100">
+              Open Tool <ArrowRight className="ml-2 h-3.5 w-3.5" />
+            </div>
           </CardContent>
         </Card>
       </motion.div>

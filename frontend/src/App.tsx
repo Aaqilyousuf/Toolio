@@ -25,13 +25,14 @@ import UtilityCategory from "./pages/UtilityCategory";
 import SystemTools from "./pages/tools/utils/SystemTools";
 import UrlTools from "./pages/tools/utils/UrlTools";
 import NetworkTools from "./pages/tools/utils/NetworkTools";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <TooltipProvider>
         <Toaster />
         <Sonner />
@@ -60,6 +61,7 @@ const App = () => (
             <Route path="/utils/system" element={<SystemTools />} />
             <Route path="/utils/url" element={<UrlTools />} />
             <Route path="/utils/network" element={<NetworkTools />} />
+            <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
